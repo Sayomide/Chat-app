@@ -4,7 +4,7 @@
   "description": "",
   "main": "chat.js",
   "scripts": {
-    "devStart": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
