@@ -6,8 +6,9 @@
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="chat.css">
   <title>Document</title>
-  <script defer src="socket.io/socket.io.js"></script>
+  <script src="socket.io/socket.io.js"></script>
   <script defer src="chat.js"></script>
+  <script defer src="server.js"></script>
 </head>
 <body>
   
@@ -24,17 +25,17 @@
       <p class="header">This is a group chat</p>
     </div>
     
-    <div class="messages">
+    <div id="messages">
       
     </div>
     
     <form action="" id="form" class="form">
-      <input type="text" placeholder="Type in here..">
+      <input type="text" class="inputss" placeholder="Type in here..">
       <input type="submit" value="Send" class="send">
     </form>
   </div>
   
-  
   <!-- dark mode -->
+ 
 </body>
 </html>

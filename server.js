@@ -1,5 +1,47 @@
-/*
+const express = require('express');
+const { createServer } = require('node:http');
+const { join } = require('node:path');
+const { Server } = require('socket.io');
 
+const app = express();
+const server = createServer(app);
+const io = new Server(server);
+
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'index.html'));
+});
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+});
+
+server.listen(3000, () => {
+  console.log('server running at http://localhost:3000');
+});
+
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
+  });
+});
+/*
+later
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+});
+*/
+
+
+
+
+
+
+
+
+
+/*
 const io = require('socket.io')(3000);
 const users = {}
 io.on('connection', socket => {
@@ -15,17 +57,4 @@ io.on('connection', socket => {
     delete users[socket.id]
   })
 })
-
 */
-
-
-/*
-const express = require('express');
-const { createServer } = require('node:hhttp');
-const { Server } = require("socket.io");
-
-const app = express();
-const server = createServer(app);
-*/
-
-
