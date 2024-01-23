@@ -1,6 +1,4 @@
- const socket = io();
- 
- 
+
 let startPage = document.querySelector(".startpage");
 let mainDiv = document.querySelector(".maindiv");
 let groupChat = document.querySelector("#group");
